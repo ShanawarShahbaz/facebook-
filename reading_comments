@@ -1,6 +1,6 @@
 import facebook
 
-graph = facebook.GraphAPI(access_token="", version="2.10")
+graph = facebook.GraphAPI(access_token="XGiM5zZBlbpQZDZD", version="2.10")
 
 
 print 'This is after access token'
@@ -12,7 +12,13 @@ print(post['message'])
 
 comments = graph.get_connections(id='1550549131871443_1871863726406647', connection_name='comments')
 
-print comments 
+#print comments 
+print('\n\n\n')
+
+for item in comments['data']:
+     print item['message']
+        
+        
 
 
 #users = graph.search(type='user',q='Mark Zuckerberg')
