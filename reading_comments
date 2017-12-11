@@ -1,0 +1,21 @@
+import facebook
+
+graph = facebook.GraphAPI(access_token="", version="2.10")
+
+
+print 'This is after access token'
+
+
+# Get the message from a post. Getting a POST -
+post = graph.get_object(id='1550549131871443_1871863726406647', fields='message')
+print(post['message'])
+
+comments = graph.get_connections(id='1550549131871443_1871863726406647', connection_name='comments')
+
+print comments 
+
+
+#users = graph.search(type='user',q='Mark Zuckerberg')
+
+#for user in users['data']:
+ #   print('%s %s' % (user['id'],user['name'].encode()))
